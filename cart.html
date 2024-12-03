@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Lounge</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <script defer src="js/script.js"></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 10px;
+      padding: 0;
+    }
+
+    .cart-heading {
+      font-size: 4em;
+      font-weight: bold;
+      margin-bottom: 50px;
+      padding: 1rem;
+      color: #666;
+    }
+
+    span {
+      color: var(--red);
+    }
+
+    .cart-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 100px;
+    }
+
+    .cart-summary {
+      margin-left: 1000px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      height: 300px;
+    }
+
+    .cart-summary h2 {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .summary-section {
+      display: flex;
+      font-size: 1.1em;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .summary-section div {
+      font-size: 1.3em;
+    }
+
+    .cart-summary p {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 1.3em;
+    }
+
+    .cart-summary .btn {
+      width: 100%;
+    }
+
+    .cart-table-header {
+      display: flex;
+      font-weight: bold;
+      font-size: 1.4em;
+      border-top: 4px solid #ff4500;
+      border-bottom: 4px solid #ff4500;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .cart-table-header>div {
+      margin-right: 70px;
+    }
+
+    .cart-item {
+      background-color: #fff;
+      border: 2px solid #ddd;
+      margin-bottom: 10px;
+      padding: 5px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item:hover {
+      transform: scale(1.05);
+    }
+
+    .cart-item img {
+      max-width: 70px;
+      margin-right: 20px;
+    }
+
+    .content {
+      display: flex;
+      font-size: 1.3em;
+    }
+
+    .content h3 {
+      margin-right: 65px;
+      display: flex;
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .price {
+      margin-right: 50px;
+      display: flex;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .quantity {
+      display: flex;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+      margin-left: 20px;
+    }
+
+    .subtotal {
+      display: flex;
+      margin-right: 50px;
+      font-weight: bold;
+      color: #ff4500;
+      font-size: 1.3em;
+    }
+
+    .item-description,
+    .item-price,
+    .item-quantity,
+    .item-subtotal {
+      margin-right: 50px;
+      display: flex;
+      font-size: 1.3em;
+    }
+
+    .item-price,
+    .item-subtotal {
+      color: black;
+    }
+
+    .item-subtotal {
+      font-weight: bold;
+      color: #ff4500;
+      font-size: 1.5em;
+      margin-left: 70px;
+    }
+
+    .btnn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--red);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      margin-top: 20px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btnn:hover {
+      background-color: #333;
+    }
+
+    .remove-button {
+      cursor: pointer;
+      color: black;
+      font-size: 1.8em;
+      margin-left: 20px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    body.empty-cart .cart-container {
+      margin-bottom: 50px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+
+    <a href="index.html" class="logo"><i class="fas fa-utensils"></i> Red Lounge</a>
+    <nav class="navbar">
+      <a href="login.html">Login/Signup</a>
+      <a href="index.html">Home</a>
+      <a href="speciality.html">Specialties</a>
+      <a href="popular.html">Popular</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="review.html">Reviews</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="cart.html">Cart</a>
+
+      <a href="deals.html">Deals</a>
+      <a href="payment.html">Checkout</a>
+      <a href="gaming.html">Adventure</a>
+    </nav>
+
+    <i id="menu-bar" class="fas fa-bars bar"></i>
+  </header>
+
+  <div class="cart-container">
+
+    <div class="cart-items-container">
+      <h1 class="cart-heading"><span>Shopping</span> Cart</h1>
+
+      <div id="empty-cart-message" style="display: none; text-align: center; font-size: 1.5em; color: #666;">
+        No items in cart
+      </div>
+      <a href="popular.html" class="btnn">Continue Shopping</a>
+
+      <button class="btnn clear-cart-btn">Clear Cart</button>
+
+    </div>
+
+  </div>
+
+  <div class="cart-summary">
+    <h2>Your Cart Summary</h2>
+    <div class="summary-section">
+      <div>Subtotal</div>
+      <div>3 item(s)</div>
+      <div>PKR 5,397</div>
+    </div>
+    <div class="summary-section">
+      <div>GST 16%</div>
+      <div>PKR 864</div>
+    </div>
+    <p>Applicable taxes and fees will be calculated before finalizing checkout</p>
+    <div class="summary-section">
+      <div style="font-weight: bold;">Grand Total</div>
+
+      <div style="font-weight: bold;">PKR 6,261</div>
+    </div>
+    <a href="popular.html" class="btnn">Continue Shopping</a>
+  </div>
+  </div>
+
+  <section class="footer">
+    <div class="share">
+      <a href="https://www.facebook.com" class="btn">Facebook</a>
+      <a href="https://www.twitter.com" class="btn">Twitter</a>
+      <a href="https://www.instagram.com" class="btn">Instagram</a>
+      <a href="https://www.pinterest.com" class="btn">Pinterest</a>
+      <a href="https://www.linkedin.com" class="btn">LinkedIn</a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let cart = localStorage.getItem('cart');
+      cart = cart ? JSON.parse(cart) : {};
+
+      const cartItemsContainer = document.querySelector('.cart-items-container');
+      const emptyCartMessage = document.getElementById('empty-cart-message');
+
+      const isEmptyCart = Object.keys(cart).length === 0;
+
+      emptyCartMessage.style.display = isEmptyCart ? 'block' : 'none';
+
+      if (!isEmptyCart) {
+        for (const productId in cart) {
+          const item = cart[productId];
+
+          const cartItem = document.createElement('div');
+          cartItem.classList.add('cart-item');
+
+          cartItem.innerHTML = `
+            <img src="images/${productId}.jpg" alt="">
+            <div class="content">
+              <h3 class="item-description">${item.quantity}x ${item.description}</h3>
+              <div class="item-price">PKR ${item.price}</div>
+              <div class="item-quantity">${item.quantity}</div>
+              <div class="item-subtotal">PKR ${item.price * item.quantity}</div>
+              <span class="remove-button fas fa-times" data-product-id="${productId}"></span>
+            </div>
+          `;
+
+          cartItemsContainer.appendChild(cartItem);
+        }
+      }
+
+      cartItemsContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('remove-button')) {
+          const productId = event.target.getAttribute('data-product-id');
+
+          delete cart[productId];
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+          event.target.closest('.cart-item').remove();
+
+          const isEmptyCart = Object.keys(cart).length === 0;
+          document.body.classList.toggle('empty-cart', isEmptyCart);
+        }
+      });
+
+      const clearCartButton = document.querySelector('.clear-cart-btn');
+
+      clearCartButton.addEventListener('click', function () {
+        localStorage.removeItem('cart');
+
+        const cartItems = document.querySelectorAll('.cart-item');
+        cartItems.forEach(item => item.remove());
+
+        document.body.classList.add('empty-cart');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

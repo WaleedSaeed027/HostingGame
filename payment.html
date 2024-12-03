@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Lounge - Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+   <script defer src="js/script.js"></script>
+  <style>
+   body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: red;
+}
+
+    .cart-heading {
+      font-size: 4em;
+      font-weight: bold;
+      margin-bottom: 50px;	
+    padding: 1rem;
+    color: white;
+    }
+
+span{
+    color: white;
+}
+
+    .cart-container {
+      display: flex;
+      justify-content: space-between;
+      margin: 100px;
+    }
+
+    .cart-items-container {
+      flex: 1;
+    }
+
+    .cart-summary {
+margin-left:150px;
+margin-top: 117px;
+      background-color: #fff;
+      border: 2px solid #ddd;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 500px; 
+height: 421px;
+    }
+
+    .cart-summary h2 {
+ border-bottom: 2px solid var(--red);
+  margin-bottom: 20px; 
+font-size:25px;
+text-align:center;
+    }
+
+    .summary-section {
+      display: flex;
+font-size: 1.1em;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .summary-section div {
+      font-size: 1.3em;
+    }
+
+    .cart-summary p {
+      margin-bottom: 20px;
+margin-top: 100px;
+  border-top: 1px solid #ddd;
+font-size: 1.3em;
+    }
+
+    .cart-summary .btn {
+      width: 100%;
+    }
+
+    .content {
+      display: flex;
+      font-size: 1.3em;
+    }
+
+    .content h3 {
+      margin-right: 65px;
+      display: flex;
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+.btnn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--red);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btnn:hover {
+  background-color: green; 
+}
+
+
+ .remove-button {
+      cursor: pointer;
+      color: black;
+      font-size: 1.8em;
+      margin-left:20px;
+    }
+
+
+.payment-form {
+      background-color: #555;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      width: 500px;
+      text-align: center;
+    }
+
+
+.payment-form h1 {
+  color: white;
+ border-bottom: 2px solid var(--red);
+  margin-bottom: 20px; 
+font-size:25px;
+}
+ input,
+    textarea,
+    select {
+
+      width: 100%;
+
+      margin-top: 5px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #555;
+      border-radius: 5px;
+      background-color: #444;
+      color: #fff;
+    }
+label {
+  color: white;
+font-size:15px;
+}
+
+  </style>
+</head>
+
+<body>
+
+   <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-utensils"></i> Red Lounge</a>
+        <nav class="navbar">
+ 	    <a href="login.html">login/Signup</a>
+            <a href="index.html">home</a>
+            <a href="speciality.html">speciality</a>
+            <a href="popular.html">popular</a>
+            <a href="gallery.html">gallery</a>
+            <a href="review.html">review</a>
+            <a href="feedback.html">feedback</a>
+            <a href="cart.html">cart</a>
+            <a href="deals.html">Deals</a>
+	    <a href="payment.html">CheckOut</a>
+      <a href="gaming.html">Adventure</a>
+        </nav>
+
+  <i id="menu-bar" class="fas fa-bars bar"></i>
+    </header>
+
+  <div class="cart-container">
+    <div class="cart-items-container">
+<h1 class="cart-heading"><span>Check</span>out</h1>
+
+<div class="payment-form">
+    <h1>Payment Information</h1>
+    <form action="home.html" method="post">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="contact">Phone Number:</label>
+      <input type="tel" id="contact" name="contact" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Shipping Address:</label>
+      <textarea id="address" name="address" rows="1" required></textarea>
+
+      <label for="paymentMethod">Select Payment Method:</label>
+      <select id="paymentMethod" name="paymentMethod" required>
+        <option value="creditCard">Credit Card</option>
+        <option value="easypaisa">Easypaisa</option>
+        <option value="COD">Cash on Delivery</option>
+      </select>
+
+     <a href="index.html" class="btnn">Place Order</a>
+
+    </form>
+  </div>
+
+    </div>
+
+    <div class="cart-summary">
+      <h2>Order Summary</h2>
+      <div class="summary-section">
+        <div>Subtotal</div>
+        <div>3 item(s)</div>
+        <div>PKR 5,397</div>
+      </div>
+      <div class="summary-section">
+        <div>GST 16%</div>
+        <div>PKR 864</div>
+      </div>
+      <p>Applicable taxes and fees will be calculated before finalizing checkout.</p>
+      <div class="summary-section">
+        <div style="font-weight: bold;">Grand Total</div>
+        <div style="font-weight: bold;">PKR 6,261</div>
+      </div>
+      <a href="popular.html" class="btnn">Continue Shopping</a>
+    </div>
+  </div>
+
+ <section class="footer">
+    <div class="share">
+        <a href="https://www.facebook.com" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="https://www.twitter.com" class="btn"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://www.instagram.com" class="btn"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.pinterest.com" class="btn"><i class="fab fa-pinterest"></i> Pinterest</a>
+        <a href="https://www.linkedin.com" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+</section>
+
+</body>
+
+</html>

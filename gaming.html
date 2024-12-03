@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Burger Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fff; /* Optional: Set background color */
+        }
+        iframe {
+            width: 1152px;  /* Adjust game width as needed */
+            height: 648px; /* Adjust game height as needed */
+            border: none; /* Remove iframe border */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fas fa-utensils"></i>Red Lounge</a>
+
+        <nav class="navbar">
+            <a href="login.html">login/Signup</a>
+            <a href="index.html">home</a>
+            <a href="speciality.html">speciality</a>
+            <a href="popular.html">popular</a>
+            <a href="gallery.html">gallery</a>
+            <a href="review.html">review</a>
+            <a href="feedback.html">feedback</a>
+            <a href="cart.html">cart</a>
+            <a href="deals.html">Deals</a>
+            <a href="payment.html">CheckOut</a>
+            <a href="gaming.html">Adventure</a>
+        </nav>
+
+        <i id="menu-bar" class="fas fa-bars bar"></i>
+    </header>
+
+    <!-- Embedding the game -->
+    <iframe src="./Game/Game.html" title="Embedded Game"></iframe>
+</body>
+</html>
